@@ -28,8 +28,7 @@ endRange = int(passwordLength.split("-")[1])
 
 # The static characters for all password lists
 staticChars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
-                '!', '@', '#', '$', '%', '^', '&', '*', '+', '=',
-                '-', '?', '.', '<', '>', '_', ',', ":"]
+                '@', '+', '-', '?', '.', '_']
 
 # Split the passed string character by character 
 chars = []
@@ -55,19 +54,17 @@ for ch in characters:
         
     chars.append(ch)
 
-
-# Concat two lists into a single list
-chars = chars + staticChars
-
 # Add upper case characters to list
 upChars = characters.upper()
 for ch in upChars:
     chars.append(ch)
 
+# Concat two lists into a single list
+chars = chars + staticChars
 
 # Starting the threads
 for i in range(startRange, endRange + 1):
-    fileName = outputFileName.split(".")[0] + "-" + str(i) + "." + outputFileName.split(".")[1]
+    fileName = 'output/' + outputFileName.split(".")[0] + "-" + str(i) + "." + outputFileName.split(".")[1]
     mFile = open(fileName, 'w')
     mFile.write('')
     mFile = open(fileName, 'a')
