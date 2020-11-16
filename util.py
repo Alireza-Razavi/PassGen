@@ -4,6 +4,7 @@ import re
 def save(tup, outFile):
      tl = list(tup)
      tl = '\n'.join(tl)
+     tl += '\n'
      outFile.write(tl)
 
 def isRangeOK(data):
