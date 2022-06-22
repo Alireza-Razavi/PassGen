@@ -26,8 +26,8 @@ if not isRangeOK(passwordLength):
 startRange = int(passwordLength.split("-")[0])
 endRange = int(passwordLength.split("-")[1])
 
-# The static characters for all password lists
-staticChars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+# The constant characters for all password lists
+constChars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
                 '@', '+', '-', '?', '.', '_']
 
 # Split the passed string character by character 
@@ -39,7 +39,7 @@ for ch in characters:
         exit(1)
     
     # Check for pre-defined program characters
-    if ch in staticChars:
+    if ch in constChars:
         print("Error -> The char '" + ch +  "' has defined in pre-defined program characters!")
         exit(1)
 
@@ -60,7 +60,7 @@ for ch in upChars:
     chars.append(ch)
 
 # Concat two lists into a single list
-chars = chars + staticChars
+chars = chars + constChars
 
 # Starting the threads
 for i in range(startRange, endRange + 1):
