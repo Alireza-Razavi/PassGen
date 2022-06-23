@@ -1,5 +1,5 @@
 ## PassGen
-**Powerful password generator to use in bruteforce attacks.**
+**Powerful password list generator to use in bruteforce attacks.**
 -    Support multi threading
 ## Requirements 
 -    python3
