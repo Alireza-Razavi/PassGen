@@ -27,8 +27,7 @@ startRange = int(passwordLength.split("-")[0])
 endRange = int(passwordLength.split("-")[1])
 
 # The constant characters for all password lists
-constChars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
-                '@', '+', '-', '?', '.', '_']
+constChars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '@', '+', '-', '?', '.', '_']
 
 # Split the passed string character by character 
 chars = []
