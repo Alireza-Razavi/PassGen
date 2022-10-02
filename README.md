@@ -9,4 +9,4 @@
 ```'a' + 'b' + 'c' + 'd' + 'A' + 'B' + 'C' + 'D' + 'The characters defined in main.py constantly'```<br />(```abcdABCD0123456789_@.-+?``` will be permutated)
 
 **Tip**: Remove or edit hard coded characters at this line:
-https://github.com/Alireza-Razavi/PassGen/blob/85971781e48592657b46e29fac205d5a97f49759/main.py#L30
+https://github.com/Alireza-Razavi/PassGen/blob/9307527bd17774ff3a24a5eafa66bb94dd3370a9/main.py#L30
