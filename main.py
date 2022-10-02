@@ -34,13 +34,11 @@ chars = []
 for ch in characters:
     # Check for lower case characters
     if ch.isupper():
-        print("Error -> You must enter the string in lower case!")
-        exit(1)
+        continue
     
     # Check for pre-defined program characters
     if ch in constChars:
-        print("Error -> The char '" + ch +  "' has defined in pre-defined program characters!")
-        exit(1)
+        continue
 
     # Check for duplicate characters
     j = 0
@@ -48,21 +46,21 @@ for ch in characters:
         if c == ch:
             j += 1
     if j > 1:
-        print("Error -> '" + characters + "' has duplicate characters!")
-        exit(1)
-        
+        continue
+  
     chars.append(ch)
 
-# Add upper case characters to list
-upChars = characters.upper()
-for ch in upChars:
-    chars.append(ch)
+    if ch.isalpha() == True:
+        chars.append(ch.upper())
 
 # Concat two lists into a single list
 chars = chars + constChars
 
+if "." not in outputFileName:
+    outputFileName += ".txt"
+
 # Starting the threads
-for i in range(startRange, endRange + 1):
+for i in range(startRange, (endRange + 1)):
     fileName = 'output/' + outputFileName.split(".")[0] + "-" + str(i) + "." + outputFileName.split(".")[1]
     mFile = open(fileName, 'w')
     mFile.write('')
