@@ -2,20 +2,27 @@ import sys
 from util import isRangeOK
 from myThread import myThread
 
+def listToString(mList):
+    forbiddenSigns = ['|', '<', '>', '?', '"', '*', '/', "\\", ':']
+    outStr = ""
+    for x in mList:
+        if x not in forbiddenSigns:
+            outStr += x
+    return outStr
+
 args = sys.argv
 
 # Check required parameters is passed
-if len(args) != 4:
+if len(args) != 3:
     print('############################################################')
-    print("Usage:\n\t- python main.py <string> <output> <length>")
-    print('\t- example: python main.py abcdefgh output.txt 8-12')
+    print("Usage:\n\t- python main.py <string> <range>")
+    print('\t- example: python main.py abcdefgh 8-12')
     print('############################################################')
     exit(1)
 
 # Parsing passed parameters into local variables     
 characters = args[1]
-outputFileName = args[2]
-passwordLength = args[3]
+passwordLength = args[2]
 
 # Check the regex
 if not isRangeOK(passwordLength):
@@ -34,7 +41,8 @@ chars = []
 for ch in characters:
     # Check for lower case characters
     if ch.isupper():
-        continue
+        print("Error -> Please enter all input characters in lower case!")
+        exit(1)
     
     # Check for pre-defined program characters
     if ch in constChars:
@@ -56,12 +64,9 @@ for ch in characters:
 # Concat two lists into a single list
 chars = chars + constChars
 
-if "." not in outputFileName:
-    outputFileName += ".txt"
-
 # Starting the threads
 for i in range(startRange, (endRange + 1)):
-    fileName = 'output/' + outputFileName.split(".")[0] + "-" + str(i) + "." + outputFileName.split(".")[1]
+    fileName = 'output/input=' + listToString(chars) + "____len=" + str(i) + ".txt"
     mFile = open(fileName, 'w')
     mFile.write('')
     mFile = open(fileName, 'a')
