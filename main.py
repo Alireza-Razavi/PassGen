@@ -35,10 +35,10 @@ def entryPoint():
     endRange = int(passwordLength.split("-")[1])
 
     # The constant characters for all password lists
-    constChars = []
+    constChars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '@', '+', '-', '?', '.', '_']
 
     # Split the passed string character by character 
-    chars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '@', '+', '-', '?', '.', '_']
+    chars = []
     for ch in characters:
         # Check for lower case characters
         if ch.isupper():
